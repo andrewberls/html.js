@@ -68,7 +68,7 @@
 
 
     <h2>Methods</h2>
-    <p>HTML.js turns HTML tags into methods. You can call <code>div()</code>, <code>a()</code>, <code>h3()</code>, or <a href="http://www.htmldog.com/reference/htmltags/">just about every tag there is</a>. Methods are defined on the <code>window</code> object, although HTML.js methods <em class="underline">will not override existing methods</em>. All methods are also available under the <code>htmljs</code> namespace, e.g., <code>htmljs.div()</code>.</p>
+    <p>HTML.js turns HTML tags into methods. You can call <code>div()</code>, <code>a()</code>, <code>h3()</code>, or <a href="http://www.htmldog.com/reference/htmltags/">just about every tag there is</a>. Methods are defined on the <code>window</code> object, although HTML.js methods <em class="underline">will not override existing methods</em>. All methods are also available under the <code>htmljs</code> namespace, e.g., <code>htmljs.div()</code> and return strings.</p>
 
 
 
@@ -85,6 +85,17 @@ checkbox_input({ name: 'vehicle', value: 'bike' })
 
 
     <p>HTML.js defines <code>&lt;type&gt;_input</code> methods for <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input">the different types of HTML inputs</a> such as <code>text</code>, <code>checkbox</code>, <code>radio</code>, etc.</p>
+
+
+    <h2>CoffeeScript</h2>
+    <p>HTML.js is even better if you're using <a href="http://coffeescript.org/">CoffeeScript</a>. This gives you the flexibility to write things like:</p>
+    <pre class="prettyprint lang-js"><code>div 'data-name': 'John', ->
+  h2("Hello World")
+
+ul "#myList", ->
+  li("item one") +
+  li("item two")
+</code></pre>
 
 
 
