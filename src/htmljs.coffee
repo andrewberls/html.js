@@ -105,7 +105,7 @@ mkTagFunction = (name) ->
 
 # Generate a function to generate an input tag
 mkInputFunction = (type) ->
-  (attrs) -> htmljs.tag("input", merge(attrs, { type: type }))
+  (attrs) -> return htmljs.tag("input", merge(attrs, { type: type }))
 
 
 # Define tag methods
