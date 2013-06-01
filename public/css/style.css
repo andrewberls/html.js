@@ -83,6 +83,14 @@ header { padding: 30px 0 }
 }
 
 
+.github-link {
+  color: #404040;
+  display: inline-block;
+  font-size: 1.4em;
+  text-align: center;
+}
+  .github-link:hover { color: #f0431c; }
+
 section {
   background-color: #FAFAFA;
   border-top: 1px solid #F0F0F0;
