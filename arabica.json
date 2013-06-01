@@ -1,0 +1,5 @@
+{
+  "paths": [ "src/htmljs.coffee" ],
+  "out": "html.min.js",
+  "uglify": true
+}

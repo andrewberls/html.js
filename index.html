@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>HTML.js - A tiny library for creating HTML fragments in JavaScript</title>
+</head>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="public/css/cheeky.min.css">
+<link rel="stylesheet" href="public/css/style.css">
+<body>
+
+  <header>
+    <h1>HTML.js</h1>
+  </header>
+
+  <div class="container">
+    <h2 class="title">HTML.js is a tiny library for creating HTML fragments in JavaScript.</h2>
+
+    <p>Tired of seeing code like this?</p>
+
+    <pre class="prettyprint lang-js"><code>html = "&lt;div class = '"+ divClass +"'&gt;&lt;p&gt;"+ content +"&lt;/p&gt;&lt;/div&gt;"</code></pre>
+
+
+
+    <p><em>So are we.</em> That's why we created HTML.js. Instead of all that, why not write something like this?</p>
+    <pre class="prettyprint lang-js"><code>div({ 'class': divClass }, function() {
+    return p(content)
+})</code></pre>
+
+
+
+    <p><em>HTML.js is designed to be flexible.</em> You can pass strings to it:</p>
+    <pre class="prettyprint lang-js"><code>div("Hello World")
+
+// => &lt;div&gt;Hello World&lt;/div&gt;</code></pre>
+
+
+
+    <p>You can specify ID and class with familiar CSS syntax:</p>
+    <pre class="prettyprint lang-js"><code>div("#myId.myClass", "Hello World")
+
+// => &lt;div id='myId' class='myClass'&gt;Hello World&lt;/div&gt;</code></pre>
+
+
+
+
+    <p>You can nest content:</p>
+    <pre class="prettyprint lang-js"><code>ul(".myList", function() {
+  return li("item one") + li("item two")
+})
+
+/*
+  &lt;ul class='myList'&gt;
+    &lt;li&gt;item one&lt;/li&gt;
+    &lt;li&gt;item two&lt;/li&gt;
+  &lt;/ul&gt;
+*/</code></pre>
+
+
+
+
+    <p>You can add data attributes:</p>
+    <pre class="prettyprint lang-js"><code>div({ id: 'myId', data: { name: 'Bart', city: 'Springfield' } }, "Hello World")
+
+// => &lt;div id='myId' data-name='Bart' data-city='Springfield'&gt;Hello World&lt;/div&gt;</code></pre>
+
+
+
+    <h2>Methods</h2>
+    <p>HTML.js turns HTML tags into methods. You can call <code>div()</code>, <code>a()</code>, <code>h3()</code>, or <a href="http://www.htmldog.com/reference/htmltags/">just about every tag there is</a>. Methods are defined on the <code>window</code> object, although HTML.js methods <em class="underline">will not override existing methods</em>. All methods are also available under the <code>htmljs</code> namespace, e.g., <code>htmljs.div()</code>.</p>
+
+
+
+    <h2>Input Helpers</h2>
+
+
+    <p>HTML.js comes with some utilities for input fields.</p>
+    <pre class="prettyprint lang-js"><code>text_input({ name: 'age', placeholder: 'Enter your age' })
+// => &lt;input name='age' placeholder='Enter your age' type='text' /&gt;
+
+checkbox_input({ name: 'vehicle', value: 'bike' })
+// => &lt;input name='vehicle' value='bike' type='checkbox' /&gt;
+</code></pre>
+
+
+    <p>HTML.js defines <code>&lt;type&gt;_input</code> methods for <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input">the different types of HTML inputs</a> such as <code>text</code>, <code>checkbox</code>, <code>radio</code>, etc.</p>
+
+
+
+    <h2>Installation</h2>
+
+    <p>Download <a href="#">html.min.js</a> and link to it on your site!</p>
+    <pre class="prettyprint lang-js"><code>&lt;script src='path/to/html.min.js'&gt;&lt;/script&gt;</code></pre>
+
+  </div><!-- .container -->
+
+
+
+  <section>
+    <div class="container">
+      <h2>Why HTML.js?</h2>
+
+      <p>HTML.js is a small weekend project, but there is a chance it may be just what you need.</p>
+
+      <h4>Keep things light</h4>
+      <p>HTML.js is under 2K and does not depend on jQuery or any other library, although it works great with them!</p>
+
+      <h4>Why not template library X / MV* framework Y?</h4>
+      <p>There are a lot of libraries out there that do their job well. HTML.js is meant for constructing small snippets where adding in a framework might be overkill - it's not meant to render large templates or pages.</p>
+    </div>
+  </section>
+
+
+
+  <footer>
+    A weekend project by <a href="http://andrewberls.com/">Andrew Berls</a>.
+  </footer>
+
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  <script type="text/javascript" src="html.min.js"></script>
+  <script>
+    // $container = $("#container")
+  </script>
+
+</body>
+</html>
