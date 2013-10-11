@@ -83,9 +83,9 @@ htmljs = root.htmljs = {
         when 'function'
           # tag("div", function() {})
           result = attrs.call()
-        when 'string'
+        when 'string', 'number'
           # tag("div", "inner content")
-          result = attrs
+          result = attrs.toString()
         else
           result = ''
 
